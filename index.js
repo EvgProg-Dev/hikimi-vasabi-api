@@ -3,8 +3,7 @@ import mongoose from "mongoose";
 import multer from "multer";
 import cors from "cors";
 import dotenv from "dotenv";
-import path from 'path';
-
+import path from "path";
 
 import {
     loginValidation,
@@ -34,8 +33,6 @@ import {
 
 dotenv.config();
 
-
-
 mongoose
     .connect(process.env.MONGO_URI)
     .then(() => {
@@ -54,7 +51,7 @@ const limiter = rateLimit({
 
 const app = express();
 
-app.set('trust proxy', true);
+app.set("trust proxy", true);
 
 app.use(cors());
 
@@ -62,7 +59,11 @@ app.use(limiter);
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, "build")));
+
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "build", "index.html"));
+});
 
 // const storage = multer.diskStorage({
 //     destination: (_, __, cb) => {

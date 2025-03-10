@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import multer from "multer";
 import cors from "cors";
 import dotenv from "dotenv";
+import { fileURLToPath } from 'url';
 import path from "path";
 
 import {
@@ -57,7 +58,8 @@ app.use(cors());
 
 app.use(limiter);
 
-const __dirname = path.dirname(new URL(import.meta.url).pathname);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.use(express.static(path.join(__dirname, 'dist')));
 

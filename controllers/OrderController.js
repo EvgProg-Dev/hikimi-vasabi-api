@@ -157,7 +157,7 @@ export const createOrder = async (req, res) => {
                 <p><strong>Товари:</strong></p>
                 <ul>
                     ${req.body.orderItems
-                        .map((item) => `${item.title} - x${item.count} шт</li>`)
+                        .map((item) => `<li>${item.title} - ${item.count} шт</li>`)
                         .join("")}
                 </ul>
             `,

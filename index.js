@@ -3,8 +3,7 @@ import mongoose from "mongoose";
 import multer from "multer";
 import cors from "cors";
 import dotenv from "dotenv";
-import { fileURLToPath } from 'url';
-import path from "path";
+
 
 import {
     loginValidation,
@@ -58,14 +57,6 @@ app.use(cors());
 
 app.use(limiter);
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-app.use(express.static(path.join(__dirname, 'dist')));
-
-app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
-});
 
 // const storage = multer.diskStorage({
 //     destination: (_, __, cb) => {

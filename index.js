@@ -3,6 +3,8 @@ import mongoose from "mongoose";
 import multer from "multer";
 import cors from "cors";
 import dotenv from "dotenv";
+import path from 'path';
+
 
 import {
     loginValidation,

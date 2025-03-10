@@ -60,6 +60,8 @@ app.use(cors());
 
 app.use(limiter);
 
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
+
 app.use(express.static(path.join(__dirname, 'build')));
 
 // const storage = multer.diskStorage({

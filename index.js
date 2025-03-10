@@ -31,7 +31,7 @@ import {
 } from "./controllers/OrderController.js";
 
 dotenv.config();
-app.set('trust proxy', true);
+
 
 
 mongoose
@@ -51,6 +51,8 @@ const limiter = rateLimit({
 });
 
 const app = express();
+
+app.set('trust proxy', true);
 
 app.use(cors());
 

@@ -31,6 +31,8 @@ import {
 } from "./controllers/OrderController.js";
 
 dotenv.config();
+app.set('trust proxy', true);
+
 
 mongoose
     .connect(process.env.MONGO_URI)

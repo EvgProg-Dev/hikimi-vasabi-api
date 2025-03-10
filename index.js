@@ -58,6 +58,8 @@ app.use(cors());
 
 app.use(limiter);
 
+app.use(express.static(path.join(__dirname, 'build')));
+
 // const storage = multer.diskStorage({
 //     destination: (_, __, cb) => {
 //         cb(null, "uploads");

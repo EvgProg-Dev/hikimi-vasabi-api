@@ -153,7 +153,7 @@ export const createOrder = async (req, res) => {
             html: `
                 <h2>📦 Замовлення №${order.orderId}</h2>
                 <p><strong>Покупець:</strong> ${req.body.firstName} ${req.body.lastName}</p>
-                ${comment ? '<p><strong>Коментар:</strong> ${req.body.comment}</p>' : ''}
+                ${req.body.comment ? `<p><strong>Коментар:</strong> ${req.body.comment}</p>` : ''}
                 <p><strong>Спосіб доставки:</strong> ${req.body.delivery === 'pickup' ? "Самовивіз" : "Кур'єр"}</p>
                 <p><strong>Сума замовлення:</strong> ${req.body.totalPrice} ₴</p>
                 <p><strong>Товари:</strong></p>

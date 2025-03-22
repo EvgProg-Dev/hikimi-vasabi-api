@@ -13,6 +13,9 @@ const ProductSchema = new mongoose.Schema(
             type: Number,
             required: true,
         },
+        salePrice: {
+            type: Number,
+        },
         weight: {
             type: Number,
         },
@@ -28,6 +31,9 @@ const ProductSchema = new mongoose.Schema(
             type: Number,
             required: true,
         },
+        isNew: {
+            type: Boolean,
+        }
     },
     {
         timestamps: true,
@@ -35,4 +41,3 @@ const ProductSchema = new mongoose.Schema(
 );
 
 export default mongoose.model("Product", ProductSchema);
-

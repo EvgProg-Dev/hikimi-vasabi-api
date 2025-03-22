@@ -31,7 +31,7 @@ export const productCreateValidation = [
     body("composition", "Invalid product composition.").optional().isString(),
     body("price", "Invalid product price. Must be a number.").isNumeric(),
     body("salePrice", "Invalid product sale price. Must be a number.").isNumeric(),
-    body("isNew", "Invalid new product. Must be a boolean.").isBoolean(),
+    body("isNewProduct", "Invalid new product. Must be a boolean.").isBoolean(),
     body("weight", "Invalid product weight. Must be a number.")
         .optional()
         .isNumeric(),

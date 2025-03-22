@@ -31,7 +31,7 @@ const ProductSchema = new mongoose.Schema(
             type: Number,
             required: true,
         },
-        isNew: {
+        isNewProduct: {
             type: Boolean,
         }
     },

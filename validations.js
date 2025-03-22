@@ -32,8 +32,9 @@ export const productCreateValidation = [
     body("price", "Invalid product price. Must be a number.").isNumeric(),
     body("salePrice")
         .optional()
-        .custom((value) => value === null || value === "" || !isNaN(value))
+        .custom((value) => value === null || !isNaN(parseFloat(value)))
         .withMessage("Invalid product sale price. Must be a number or null."),
+
     body("isNewProduct", "Invalid new product. Must be a boolean.").isBoolean(),
     body("weight", "Invalid product weight. Must be a number.")
         .optional()

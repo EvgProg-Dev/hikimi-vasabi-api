@@ -29,6 +29,7 @@ export const productCreateValidation = [
         .isString()
         .isLength({ min: 3 }),
     body("composition", "Invalid product composition.").optional().isString(),
+    body("gift", "Invalid gift composition.").optional().isString(),
     body("price", "Invalid product price. Must be a number.").isNumeric(),
     body("salePrice")
         .optional()

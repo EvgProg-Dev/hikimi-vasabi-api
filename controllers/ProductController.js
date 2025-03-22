@@ -101,6 +101,7 @@ export const createProduct = async (req, res) => {
             category: req.body.category,
             rating: req.body.rating,
             imageUrl: req.body.imageUrl,
+            gift: req.body.gift,
         });
 
         const product = await doc.save();
@@ -130,6 +131,7 @@ export const updateProduct = async (req, res) => {
                 rating: req.body.rating,
                 category: req.body.category,
                 imageUrl: req.body.imageUrl,
+                gift: req.body.gift,
             },
             { new: true }
         );

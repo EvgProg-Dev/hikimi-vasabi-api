@@ -35,6 +35,9 @@ const ProductSchema = new mongoose.Schema(
         isNewProduct: {
             type: Boolean,
         },
+        gift: {
+            type: String,
+        }
     },
     {
         timestamps: true,

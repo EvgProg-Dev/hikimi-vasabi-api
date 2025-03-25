@@ -37,9 +37,7 @@ export const productCreateValidation = [
         .withMessage("Invalid product sale price. Must be a number or null."),
 
     body("isNewProduct", "Invalid new product. Must be a boolean.").isBoolean(),
-    body("weight", "Invalid product weight. Must be a number.")
-        .optional()
-        .isNumeric(),
+    body("weight", "Invalid product weight.").optional().isString(),
     body("rating", "Invalid product rating. Must be a number.").isNumeric(),
     body("category", "Invalid product category.").isString(),
     body("imageUrl", "Invalid product image. Must be a valid URL.")

@@ -57,17 +57,6 @@ app.use(cors());
 app.use(limiter);
 
 
-// const storage = multer.diskStorage({
-//     destination: (_, __, cb) => {
-//         cb(null, "uploads");
-//     },
-//     filename: (_, file, cb) => {
-//         cb(null, file.originalname);
-//     },
-// });
-
-// const upload = multer({ storage });
-
 const storage = multer.diskStorage({
     destination: (_, __, cb) => cb(null, "uploads"),
     filename: (_, file, cb) => cb(null, file.originalname),
@@ -85,7 +74,6 @@ const upload = multer({
 
 app.use("/uploads", express.static("uploads"));
 
-// Эндпоинты
 app.post("/upload", checkAuth, upload.single("image"), (req, res) => {
     res.json({ url: `/uploads/${req.file.originalname}` });
 });
